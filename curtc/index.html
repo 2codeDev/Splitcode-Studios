@@ -1,1 +1,614 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Clean Up RTC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Official website for Clean Up RTC!"/>
+    <meta name="keywords" content="clean up rtc, roblox, rtc"/>
+    <meta property="og:title" content="Clean Up RTC"/>
+    <meta property="og:description" content="Official website for Clean Up RTC!"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://cleanuprtc.com"/>
+    <meta property="og:image" content="https://via.placeholder.com/1200x630"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navigation-height-mobile: 70px;
+            --navigation-height: 90px;
+            --page-max-width: 1400px;
+            --pageOrange: #FF7A00;
+            --pageBlue: #3B82F6;
+            --pageGreen: #10B981;
+            --pagePink: #EC4899;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            z-index: 200;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            height: var(--navigation-height-mobile);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: var(--page-max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        @media (min-width: 1024px) {
+            .nav-container {
+                height: var(--navigation-height);
+            }
+        }
+        
+        .logo {
+            height: 40px;
+            width: auto;
+        }
+        
+        .nav-links {
+            display: none;
+        }
+        
+        @media (min-width: 1024px) {
+            .nav-links {
+                display: flex;
+                gap: 30px;
+                margin-left: 40px;
+            }
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 18px;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-link:hover {
+            color: var(--pageOrange);
+        }
+        
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--pageOrange);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            background: rgba(110, 110, 110, 0.1);
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        @media (min-width: 1024px) {
+            .hamburger {
+                display: none;
+            }
+        }
+        
+        /* Main content */
+        main {
+            margin-top: var(--navigation-height-mobile);
+            padding-top: 40px;
+        }
+        
+        @media (min-width: 1024px) {
+            main {
+                margin-top: var(--navigation-height);
+            }
+        }
+        
+        .hero {
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(to bottom, #e0e0e0, #ffffff);
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        @media (min-width: 768px) {
+            .hero {
+                flex-direction: row;
+                align-items: center;
+                text-align: left;
+                padding: 40px;
+            }
+        }
+        
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #222;
+        }
+        
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--pageBlue);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(255, 122, 0, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 122, 0, 0.4);
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        /* Game features section */
+        .features {
+            padding: 80px 20px;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #222;
+        }
+        
+        .section-title p {
+            font-size: 1.25rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .feature-card {
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(59, 130, 246, 0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .feature-icon i {
+            font-size: 24px;
+            color: var(--pageBlue);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #222;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Screenshots section */
+        .screenshots {
+            padding: 80px 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        @media (min-width: 768px) {
+            .screenshot-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .screenshot-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .screenshot {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .screenshot:hover {
+            transform: scale(1.03);
+        }
+        
+        .screenshot img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 60px 20px 30px;
+        }
+        
+        .footer-container {
+            max-width: var(--page-max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .footer-logo {
+            height: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-about p {
+            color: #aaa;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: var(--pageOrange);
+        }
+        
+        .footer-links h3 {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--pageOrange);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e06d00;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="/">
+                <img src="https://via.placeholder.com/150x50?text=Clean+Up+RTC+Logo" alt="Clean Up RTC Logo" class="logo">
+            </a>
+            
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/partner-program" class="nav-link">Partner Program</a>
+            </div>
+            
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Clean Up RTC</h1>
+                <p class="subtitle">Have you ever wished that you could just get rid of those people in the RTC that you dislike? Well you've found the right place!</p>
+                <a href="https://www.roblox.com/games/12097348343" class="btn">
+                    <i class="fas fa-play"></i> Play Now
+                </a>
+            </div>
+            <div class="hero-image">
+                <img src="https://tr.rbxcdn.com/180DAY-35bdc3a7ebdfe727b09ea9c0318acb6c/768/432/Image/Webp/noFilter" alt="Clean Up RTC Game Screenshot">
+            </div>
+        </section>
+        
+        <!-- Features Section -->
+        <section class="features">
+            <div class="section-title">
+                <h2>About Clean Up RTC</h2>
+                <p>Experience one of the most popular games made by Splitcode.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3>The Basics</h3>
+                    <p>Clean Up The RTC (Roblox Twitter Community) by shooting those you don't like with a Hyperlaser Gun.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Codes</h3>
+                    <p>Codes text here.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Multiplayer</h3>
+                    <p>Team up with friends to tackle big cleaning jobs together or compete for the highest score.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3>Our Shop</h3>
+                    <p>Buy new Hyperlaser Guns that have different textures, colors, and more!</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Achievements</h3>
+                    <p>Complete challenges and earn achievements to show off your cleaning skills.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Regular Updates</h3>
+                    <p>New content, features, and more added regularly to keep the game up to date.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Screenshots Section -->
+        <section class="screenshots">
+            <div class="section-title">
+                <h2>Screenshots</h2>
+                <p>See the game in action</p>
+            </div>
+            
+            <div class="screenshot-grid">
+                <div class="screenshot">
+                    <img src="https://via.placeholder.com/400x300?text=Screenshot+1" alt="Game Screenshot 1">
+                </div>
+                <div class="screenshot">
+                    <img src="https://via.placeholder.com/400x300?text=Screenshot+2" alt="Game Screenshot 2">
+                </div>
+                <div class="screenshot">
+                    <img src="https://via.placeholder.com/400x300?text=Screenshot+3" alt="Game Screenshot 3">
+                </div>
+                <div class="screenshot">
+                    <img src="https://via.placeholder.com/400x300?text=Screenshot+4" alt="Game Screenshot 4">
+                </div>
+                <div class="screenshot">
+                    <img src="https://via.placeholder.com/400x300?text=Screenshot+5" alt="Game Screenshot 5">
+                </div>
+                <div class="screenshot">
+                    <img src="https://via.placeholder.com/400x300?text=Screenshot+6" alt="Game Screenshot 6">
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <img src="https://via.placeholder.com/150x50?text=Clean+Up+RTC+Logo" alt="Clean Up RTC Logo" class="footer-logo">
+                <p>Clean Up RTC is a fun and engaging cleaning simulation game on Roblox where players can experience the satisfaction of cleaning up various environments.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-roblox"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/partner-program">Partner Program</a></li>
+                    <li><a href="https://www.roblox.com/games/12097348343">Play Game</a></li>
+                    <li><a href="/support">Support</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="/updates">Game Updates</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
