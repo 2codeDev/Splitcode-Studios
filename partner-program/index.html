@@ -9,7 +9,7 @@
     <meta property="og:title" content="Partner Program - Clean Up RTC"/>
     <meta property="og:description" content="Join the Clean Up RTC Partner Program and get exclusive perks for content creators!"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="https://cleanuprtc.com/partner-program"/>
+    <meta property="og:url" content="https://yourwebsite.com/partner-program"/>
     <meta property="og:image" content="https://via.placeholder.com/1200x630"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +43,6 @@
             line-height: 1.6;
         }
         
-        /* Navigation */
         header {
             position: fixed;
             top: 0;
@@ -136,8 +135,7 @@
                 display: none;
             }
         }
-        
-        /* Main content */
+    
         main {
             margin-top: var(--navigation-height-mobile);
             padding-top: 60px;
@@ -204,10 +202,65 @@
             z-index: 1;
         }
         
-        /* Perks section */
+        .apply-section {
+            padding: 60px 20px;
+            background-color: white;
+            text-align: center;
+        }
+        
+        .apply-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .apply-section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+        
+        .apply-section p {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-apply {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 2px 5px rgba(52, 168, 83, 0.2);
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-apply:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 168, 83, 0.3);
+            background-color: var(--accent-dark);
+        }
+        
+        .btn-apply i {
+            margin-right: 10px;
+            font-size: 1rem;
+        }
+        
         .perks-section {
             padding: 80px 20px;
-            background-color: white;
+            background-color: var(--background-light);
         }
         
         .section-title {
@@ -300,62 +353,6 @@
             margin-top: auto;
         }
         
-        .apply-section {
-            padding: 60px 20px;
-            background-color: var(--background-light);
-            text-align: center;
-        }
-        
-        .apply-container {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .apply-section h2 {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: var(--text-color);
-        }
-        
-        .apply-section p {
-            font-size: 1.1rem;
-            color: var(--light-text);
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .btn-apply {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 14px 35px;
-            border-radius: 50px;
-            font-weight: 500;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            box-shadow: 0 2px 5px rgba(52, 168, 83, 0.2);
-            border: none;
-            cursor: pointer;
-            letter-spacing: 0.5px;
-        }
-        
-        .btn-apply:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(52, 168, 83, 0.3);
-            background-color: var(--accent-dark);
-        }
-        
-        .btn-apply i {
-            margin-right: 10px;
-            font-size: 1rem;
-        }
-        
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -395,7 +392,7 @@
     <header>
         <div class="nav-container">
             <a href="/">
-                <img src="https://via.placeholder.com/150x50?text=Clean+Up+RTC+Logo" alt="Clean Up RTC Logo" class="logo">
+                <img src="https://raw.githubusercontent.com/2codeDev/Splitcode-Studios/refs/heads/main/img/clean_rtc_transparent.png" alt="Clean Up RTC Logo" class="logo">
             </a>
             
             <div class="nav-links">
@@ -414,7 +411,17 @@
             <h1>Clean Up RTC Partner Program</h1>
             <p>Join our exclusive program for content creators and get special perks to enhance your experience</p>
         </section>
-      
+        
+        <section class="apply-section">
+            <div class="apply-container">
+                <h2>Ready to Join?</h2>
+                <p>Apply now to become an official Clean Up RTC Partner and start enjoying these exclusive benefits today!</p>
+                <a href="https://forms.gle/YOUR_APPLICATION_LINK" class="btn-apply">
+                    <i class="fas fa-paper-plane"></i> Apply Now
+                </a>
+            </div>
+        </section>
+        
         <section class="perks-section">
             <div class="section-title">
                 <h2>Partner Perks</h2>
@@ -477,22 +484,12 @@
                 </div>
             </div>
         </section>
-        
-        <section class="apply-section">
-            <div class="apply-container">
-                <h2>Ready to Join?</h2>
-                <p>Apply now to become an official Clean Up RTC Partner and start enjoying these exclusive benefits today!</p>
-                <a href="https://forms.gle/YOUR_APPLICATION_LINK" class="btn-apply">
-                    <i class="fas fa-paper-plane"></i> Apply Now
-                </a>
-            </div>
-        </section>
     </main>
     
     <footer>
         <div class="footer-container">
             <div class="footer-about">
-                <img src="https://via.placeholder.com/150x50?text=Clean+Up+RTC+Logo" alt="Clean Up RTC Logo" class="footer-logo">
+                <img src="https://raw.githubusercontent.com/2codeDev/Splitcode-Studios/refs/heads/main/img/clean_rtc_transparent.png" alt="Clean Up RTC Logo" class="footer-logo">
                 <p>Clean Up RTC is very fun. Join it today!</p>
                 <div class="social-links">
                     <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
