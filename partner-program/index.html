@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Partner Program - Clean Up RTC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Join the Clean Up RTC Partner Program and get exclusive perks for content creators!"/>
+    <meta name="keywords" content="clean up rtc, partner program, roblox, content creators"/>
+    <meta property="og:title" content="Partner Program - Clean Up RTC"/>
+    <meta property="og:description" content="Join the Clean Up RTC Partner Program and get exclusive perks for content creators!"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://cleanuprtc.com/partner-program"/>
+    <meta property="og:image" content="https://via.placeholder.com/1200x630"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navigation-height-mobile: 70px;
+            --navigation-height: 90px;
+            --page-max-width: 1400px;
+            --primary-color: #4285F4;
+            --primary-dark: #3367D6;
+            --primary-light: #8AB4F8;
+            --accent-color: #34A853;
+            --accent-dark: #2D9146;
+            --text-color: #3C4043;
+            --light-text: #5F6368;
+            --background-light: #F8F9FA;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-light);
+            color: var(--text-color);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            z-index: 200;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .nav-container {
+            height: var(--navigation-height-mobile);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: var(--page-max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        @media (min-width: 1024px) {
+            .nav-container {
+                height: var(--navigation-height);
+            }
+        }
+        
+        .logo {
+            height: 40px;
+            width: auto;
+        }
+        
+        .nav-links {
+            display: none;
+        }
+        
+        @media (min-width: 1024px) {
+            .nav-links {
+                display: flex;
+                gap: 30px;
+                margin-left: 40px;
+            }
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            background: rgba(66, 133, 244, 0.1);
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+        
+        @media (min-width: 1024px) {
+            .hamburger {
+                display: none;
+            }
+        }
+        
+        /* Main content */
+        main {
+            margin-top: var(--navigation-height-mobile);
+            padding-top: 60px;
+        }
+        
+        @media (min-width: 1024px) {
+            main {
+                margin-top: var(--navigation-height);
+            }
+        }
+        
+        .partner-hero {
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .partner-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(66, 133, 244, 0.05);
+            border-radius: 50%;
+            transform: translate(30%, -30%);
+        }
+        
+        .partner-hero::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            background-color: rgba(52, 168, 83, 0.05);
+            border-radius: 50%;
+            transform: translate(-30%, 30%);
+        }
+        
+        .partner-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-color);
+            line-height: 1.2;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .partner-hero p {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            max-width: 700px;
+            margin: 0 auto 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Perks section */
+        .perks-section {
+            padding: 80px 20px;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+        
+        .perks-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        @media (min-width: 768px) {
+            .perks-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .perk-card {
+            background-color: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .perk-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(66, 133, 244, 0.1);
+            border-color: rgba(66, 133, 244, 0.2);
+        }
+        
+        .perk-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(52, 168, 83, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            font-size: 24px;
+        }
+        
+        .perk-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+        
+        .perk-card p {
+            color: var(--light-text);
+            line-height: 1.6;
+            font-weight: 400;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .perk-badge {
+            display: inline-block;
+            background-color: rgba(52, 168, 83, 0.1);
+            color: var(--accent-color);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: auto;
+        }
+        
+        .apply-section {
+            padding: 60px 20px;
+            background-color: var(--background-light);
+            text-align: center;
+        }
+        
+        .apply-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .apply-section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+        
+        .apply-section p {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-apply {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 2px 5px rgba(52, 168, 83, 0.2);
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-apply:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 168, 83, 0.3);
+            background-color: var(--accent-dark);
+        }
+        
+        .btn-apply i {
+            margin-right: 10px;
+            font-size: 1rem;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .partner-hero, .section-title, .perk-card, .apply-container {
+            animation: fadeIn 0.6s ease forwards;
+        }
+        
+        .perk-card:nth-child(1) { animation-delay: 0.1s; }
+        .perk-card:nth-child(2) { animation-delay: 0.2s; }
+        .perk-card:nth-child(3) { animation-delay: 0.3s; }
+        .perk-card:nth-child(4) { animation-delay: 0.4s; }
+        .perk-card:nth-child(5) { animation-delay: 0.5s; }
+        .perk-card:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="/">
+                <img src="https://via.placeholder.com/150x50?text=Clean+Up+RTC+Logo" alt="Clean Up RTC Logo" class="logo">
+            </a>
+            
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/partner-program" class="nav-link">Partner Program</a>
+            </div>
+            
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section class="partner-hero">
+            <h1>Clean Up RTC Partner Program</h1>
+            <p>Join our exclusive program for content creators and get special perks to enhance your experience</p>
+        </section>
+      
+        <section class="perks-section">
+            <div class="section-title">
+                <h2>Partner Perks</h2>
+                <p>Here's what you get when you join our Partner Program</p>
+            </div>
+            
+            <div class="perks-grid">
+                <div class="perk-card">
+                    <div class="perk-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Exclusive Badge</h3>
+                    <p>Get a special in-game partner badge that shows next to your username, letting everyone know you're an official Clean Up RTC partner.</p>
+                    <span class="perk-badge">IN-GAME PERK</span>
+                </div>
+                
+                <div class="perk-card">
+                    <div class="perk-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Early Access</h3>
+                    <p>Be among the first to test new features and updates before they're released to the public.</p>
+                    <span class="perk-badge">EXCLUSIVE ACCESS</span>
+                </div>
+                
+                <div class="perk-card">
+                    <div class="perk-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Creator Community</h3>
+                    <p>Join our private Discord server where you can connect with other partners and the development team.</p>
+                    <span class="perk-badge">COMMUNITY</span>
+                </div>
+                
+                <div class="perk-card">
+                    <div class="perk-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Special Items</h3>
+                    <p>Receive exclusive in-game items and cosmetics that aren't available to regular players.</p>
+                    <span class="perk-badge">IN-GAME PERK</span>
+                </div>
+                
+                <div class="perk-card">
+                    <div class="perk-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Promotion</h3>
+                    <p>Get featured on our official social media channels and in-game announcements.</p>
+                    <span class="perk-badge">MARKETING</span>
+                </div>
+                
+                <div class="perk-card">
+                    <div class="perk-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Direct Communication</h3>
+                    <p>Have direct access to the development team to share your ideas and feedback.</p>
+                    <span class="perk-badge">SUPPORT</span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="apply-section">
+            <div class="apply-container">
+                <h2>Ready to Join?</h2>
+                <p>Apply now to become an official Clean Up RTC Partner and start enjoying these exclusive benefits today!</p>
+                <a href="https://forms.gle/YOUR_APPLICATION_LINK" class="btn-apply">
+                    <i class="fas fa-paper-plane"></i> Apply Now
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <img src="https://via.placeholder.com/150x50?text=Clean+Up+RTC+Logo" alt="Clean Up RTC Logo" class="footer-logo">
+                <p>Clean Up RTC is very fun. Join it today!</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-roblox"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/partner-program">Partner Program</a></li>
+                    <li><a href="https://www.roblox.com/games/YOUR-GAME-ID">Play Game</a></li>
+                    <li><a href="/support">Support</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="/updates">Game Updates</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
