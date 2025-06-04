@@ -14,17 +14,17 @@ mikogo.com|Remote Access Software|
 ammyy.com|Remote Access Software|
 gotoassist.com|Remote Access Software|
 
-# Phishing Sites (Examples - replace with real ones)
+# Phishing Sites
 paypal-verify-account.info|Phishing|Fake PayPal login
 appleid-security-update.net|Phishing|Fake Apple ID
 amazon-account-reauth.com|Phishing|Fake Amazon login
 yourbank-secure.biz|Phishing|Generic Bank Phishing
 solvealgebra.fun|Phishing|Test for Phishing Category
 
-# Malware Distribution (Examples)
+# Malware Distribution
 free-software-download.xyz|Malware|Bundles malware with software
 crack-keygen-site.ru|Malware|Distributes trojan viruses
 
-# Tech Support Scams (Generic)
+# Tech Support Scams
 microsoft-help-alerts.tech|Tech Support Scam|Fake virus alert page
 windows-security-hotline.online|Tech Support Scam|Fake Windows Defender popup
