@@ -19,6 +19,7 @@ paypal-verify-account.info|Phishing|Fake PayPal login
 appleid-security-update.net|Phishing|Fake Apple ID
 amazon-account-reauth.com|Phishing|Fake Amazon login
 yourbank-secure.biz|Phishing|Generic Bank Phishing
+solvealgebra.fun|Phishing|Test for Phishing Category
 
 # Malware Distribution (Examples)
 free-software-download.xyz|Malware|Bundles malware with software
