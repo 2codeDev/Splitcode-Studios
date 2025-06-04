@@ -1,0 +1,29 @@
+# This is our master blocklist for ScamGuard.
+# Lines starting with '#' are comments and will be ignored.
+# Format: domain | category | notes (optional)
+
+# Remote Access Software
+teamviewer.com|Remote Access Software|Used in tech support scams
+anydesk.com|Remote Access Software|Similar to TeamViewer
+ultravnc.com|Remote Access Software|
+logmein.com|Remote Access Software|
+supremocontrol.com|Remote Access Software|
+dwservice.net|Remote Access Software|
+join.me|Remote Access Software|
+mikogo.com|Remote Access Software|
+ammyy.com|Remote Access Software|
+gotoassist.com|Remote Access Software|
+
+# Phishing Sites (Examples - replace with real ones)
+paypal-verify-account.info|Phishing|Fake PayPal login
+appleid-security-update.net|Phishing|Fake Apple ID
+amazon-account-reauth.com|Phishing|Fake Amazon login
+yourbank-secure.biz|Phishing|Generic Bank Phishing
+
+# Malware Distribution (Examples)
+free-software-download.xyz|Malware|Bundles malware with software
+crack-keygen-site.ru|Malware|Distributes trojan viruses
+
+# Tech Support Scams (Generic)
+microsoft-help-alerts.tech|Tech Support Scam|Fake virus alert page
+windows-security-hotline.online|Tech Support Scam|Fake Windows Defender popup
